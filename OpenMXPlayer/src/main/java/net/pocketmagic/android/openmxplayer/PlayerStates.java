@@ -1,4 +1,5 @@
 package net.pocketmagic.android.openmxplayer;
+
 /*
 ** OpenMXPlayer - Freeware audio player library for Android
 ** Copyright (C) 2009 - 2014 Radu Motisan, radu.motisan@gmail.com
@@ -19,23 +20,23 @@ package net.pocketmagic.android.openmxplayer;
 ** along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 public class PlayerStates {
-	 /**
+    /**
      * Playing state which can either be stopped, playing, or reading the header before playing
      */
-	public static final int	READY_TO_PLAY = 2;
-	public static final int PLAYING = 3; 
-	public static final int STOPPED = 4; 
+    public static final int READY_TO_PLAY = 2;
+    public static final int PLAYING = 3;
+    public static final int STOPPED = 4;
     public int playerState = STOPPED;
-    
+
     public int get() {
-    	return playerState;
+        return playerState;
     }
-    
-    public void set(int state) { 
-    	playerState = state;
+
+    public void set(int state) {
+        playerState = state;
     }
-    
-    
+
+
     /**
      * Checks whether the player is ready to play, this is the state used also for Pause (phase 2)
      *
@@ -44,8 +45,8 @@ public class PlayerStates {
     public synchronized boolean isReadyToPlay() {
         return playerState == PlayerStates.READY_TO_PLAY;
     }
-    
-    
+
+
     /**
      * Checks whether the player is currently playing (phase 3)
      *
@@ -54,8 +55,8 @@ public class PlayerStates {
     public synchronized boolean isPlaying() {
         return playerState == PlayerStates.PLAYING;
     }
-    
-    
+
+
     /**
      * Checks whether the player is currently stopped (not playing)
      *
@@ -64,8 +65,6 @@ public class PlayerStates {
     public synchronized boolean isStopped() {
         return playerState == PlayerStates.STOPPED;
     }
-
- 
 
 
 }

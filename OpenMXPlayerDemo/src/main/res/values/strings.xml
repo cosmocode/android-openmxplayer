@@ -10,9 +10,9 @@
     <string name="but2b">1.Load AAC</string>
     <string name="but2c">1.Load WMA</string>
     <string name="but3">1.Load custom</string>
-	<string name="but4">2.Play</string>
+    <string name="but4">2.Play</string>
     <string name="but5">3.Pause</string>
-	<string name="but6">4.Stop</string>
-	<string name="seek_instr">Move seekbar to seek</string>
-    
+    <string name="but6">4.Stop</string>
+    <string name="seek_instr">Move seekbar to seek</string>
+
 </resources>
