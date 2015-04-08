@@ -1,3 +1,15 @@
+# About this fork
+
+This is a fork of an automatic google code export. There did exist multiple exports, none of them
+by the original author as far as I could see. I simply used the oldest export I could find.
+
+This fork restructures the project into a Gradle based Android Studio project. More fixes or
+enhancements might be added based on our needs. However I am happy to move this repository over to
+whomever is more qualified to maintain it. This is basically just a scratch our own itch fork.
+
+
+# Original README follows
+
 
 OpenMXPlayer Audio player for Android
 http://www.pocketmagic.net
