@@ -32,6 +32,7 @@ import android.media.MediaFormat;
 import android.os.Handler;
 import android.util.Log;
 
+import java.io.IOException;
 import java.nio.ByteBuffer;
 
 public class OpenMXPlayer implements Runnable {
@@ -191,7 +192,11 @@ public class OpenMXPlayer implements Runnable {
             return;
         }
         // create the actual decoder, using the mime to select
-        codec = MediaCodec.createDecoderByType(mime);
+        try {
+            codec = MediaCodec.createDecoderByType(mime);
+        } catch (IOException e) {
+            codec = null;
+        }
         // check we have a valid codec instance
         if (codec == null) {
             if (events != null) handler.post(new Runnable() {
@@ -286,7 +291,7 @@ public class OpenMXPlayer implements Runnable {
                 if (chunk.length > 0) {
                     audioTrack.write(chunk, 0, chunk.length);
                     /*if(this.state.get() != PlayerStates.PLAYING) {
-                		if (events != null) handler.post(new Runnable() { @Override public void run() { events.onPlay();  } }); 
+                        if (events != null) handler.post(new Runnable() { @Override public void run() { events.onPlay();  } });
             			state.set(PlayerStates.PLAYING);
                 	}*/
 
